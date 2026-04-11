@@ -10,6 +10,17 @@
 
 </div>
 
+[English README | Simplified Chinese](README_EN.md)
+
+GitHub is a global platform, 和 theoretically, everyone should use English. But since this project is mostly meant for Chinese user and rely on a Chinese website [BiliBili](https://live.bilibili.com) ([_wikipedia_](https://en.wikipedia.org/wiki/Bilibili)), most things related to this project like code comments, documentations and other related repositories are written in Chinese. This README file will always use English so people like _you_ can understand what is this, and perhaps make some use out of it.
+
+Software UI is available in
+
+- 简体中文 (Source and default)
+- 繁体中文
+- 日本語
+- English
+
 ## 安装
 
 在 [rec.danmuji.org](https://rec.danmuji.org) 提供了有自动更新功能的安装包。
