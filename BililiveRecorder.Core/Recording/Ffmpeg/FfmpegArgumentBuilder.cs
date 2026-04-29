@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using System.IO;
 using BililiveRecorder.Core.Config.V3;
-using BililiveRecorder.Core.Templating;
 
 namespace BililiveRecorder.Core.Recording.Ffmpeg
 {
     internal static class FfmpegArgumentBuilder
     {
+        private static readonly char[] AdditionalInvalidFileNameChars =
+        {
+            '<', '>', ':', '"', '/', '\\', '|', '?', '*',
+        };
+
         public static IReadOnlyList<string> BuildDashArguments(RoomConfig config, string sessionDirectory)
         {
             var segmentDuration = config.Fmp4SegmentDurationSeconds == 0 ? 6 : config.Fmp4SegmentDurationSeconds;
@@ -85,10 +89,17 @@ namespace BililiveRecorder.Core.Recording.Ffmpeg
             return result;
         }
 
-        private static string CleanFileName(string? value, string fallback)
+        internal static string CleanFileName(string? value, string fallback)
         {
             var name = string.IsNullOrWhiteSpace(value) ? fallback : value!;
-            return FileNameGenerator.RemoveInvalidFileName(name, ignore_slash: false);
+
+            foreach (var c in Path.GetInvalidFileNameChars())
+                name = name.Replace(c, '_');
+
+            foreach (var c in AdditionalInvalidFileNameChars)
+                name = name.Replace(c, '_');
+
+            return name;
         }
     }
 }

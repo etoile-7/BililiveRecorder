@@ -10,7 +10,6 @@ using BililiveRecorder.Core.Config;
 using BililiveRecorder.Core.Event;
 using BililiveRecorder.Core.Recording.Ffmpeg;
 using BililiveRecorder.Core.Scripting;
-using BililiveRecorder.Core.Templating;
 using Serilog;
 
 namespace BililiveRecorder.Core.Recording
@@ -395,8 +394,7 @@ namespace BililiveRecorder.Core.Recording
 
         private static string CleanFileName(string? value, string fallback)
         {
-            var name = string.IsNullOrWhiteSpace(value) ? fallback : value!;
-            return FileNameGenerator.RemoveInvalidFileName(name, ignore_slash: false);
+            return FfmpegArgumentBuilder.CleanFileName(value, fallback);
         }
     }
 }
