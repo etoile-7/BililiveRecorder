@@ -21,7 +21,7 @@ export const data: Array<ConfigEntry> = [
         name: "录制模式",
         type: "RecordMode",
         configType: "room",
-        default: "RecordMode.Standard"
+        default: "RecordMode.Fmp4"
     },
     {
         id: "FfmpegExecutablePath",

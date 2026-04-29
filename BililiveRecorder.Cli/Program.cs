@@ -95,7 +95,7 @@ namespace BililiveRecorder.Cli
                         new Option<string?>(new []{ "--cert-pfx-path", "--pfx" }, "Path of the certificate pfx file"),
                         new Option<string?>(new []{ "--cert-password"}, "Password of the certificate"),
 
-                        new Option<RecordMode>(new []{ "--record-mode", "--mode" }, () => RecordMode.Standard, "Recording mode"),
+                        new Option<RecordMode>(new []{ "--record-mode", "--mode" }, () => RecordMode.Fmp4, "Recording mode"),
                         new Option<string>(new []{ "--cookie", "-c" }, "Cookie string for api requests"),
                         new Option<string>(new []{ "--filename", "-f" }, "File name format"),
                         new Option<PortableModeArguments.PortableDanmakuMode>(new []{ "--danmaku", "-d" }, "Flags for danmaku recording"),
@@ -602,7 +602,7 @@ namespace BililiveRecorder.Cli
 
         public sealed class PortableModeArguments : SharedArguments
         {
-            public RecordMode RecordMode { get; set; } = RecordMode.Standard;
+            public RecordMode RecordMode { get; set; } = RecordMode.Fmp4;
 
             public string OutputPath { get; set; } = string.Empty;
 

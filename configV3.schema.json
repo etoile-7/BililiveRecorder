@@ -374,8 +374,8 @@
           }
         },
         "RecordMode": {
-          "description": "录制模式\n默认: RecordMode.Standard",
-          "markdownDescription": "录制模式  \n默认: `RecordMode.Standard `\n\n",
+          "description": "录制模式\n默认: RecordMode.Fmp4",
+          "markdownDescription": "录制模式  \n默认: `RecordMode.Fmp4 `\n\n",
           "type": "object",
           "additionalProperties": false,
           "properties": {
@@ -755,8 +755,8 @@
           }
         },
         "RecordMode": {
-          "description": "录制模式\n默认: RecordMode.Standard",
-          "markdownDescription": "录制模式  \n默认: `RecordMode.Standard `\n\n",
+          "description": "录制模式\n默认: RecordMode.Fmp4",
+          "markdownDescription": "录制模式  \n默认: `RecordMode.Fmp4 `\n\n",
           "type": "object",
           "additionalProperties": false,
           "properties": {

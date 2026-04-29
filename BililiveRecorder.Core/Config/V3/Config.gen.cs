@@ -634,7 +634,7 @@ namespace BililiveRecorder.Core.Config.V3
         public static readonly DefaultConfig Instance = new DefaultConfig();
         private DefaultConfig() { }
 
-        public RecordMode RecordMode => RecordMode.Standard;
+        public RecordMode RecordMode => RecordMode.Fmp4;
 
         public string FfmpegExecutablePath => @"ffmpeg";
 

@@ -1,0 +1,51 @@
+diff --git a/src/components/RoomSettingModal.vue b/src/components/RoomSettingModal.vue
+index 5770c9c..c9d041b 100644
+--- a/src/components/RoomSettingModal.vue
++++ b/src/components/RoomSettingModal.vue
+@@ -89,6 +89,10 @@ const RecordModes = [{
+ {
+   label: '原始数据模式',
+   value: 1,
++},
++{
++  label: 'fMP4 分片模式',
++  value: 2,
+ }];
+
+ const CuttingModes = [{
+diff --git a/src/utils/api.ts b/src/utils/api.ts
+index 4ac2a8f..b630b54 100644
+--- a/src/utils/api.ts
++++ b/src/utils/api.ts
+@@ -25,6 +25,7 @@ enum CuttingMode {
+ enum RecordMode {
+   Standard = 0,
+   RawData = 1,
++  Fmp4 = 2,
+ }
+
+ enum AllowedAddressFamily {
+@@ -483,7 +484,7 @@ export class Recorder<T = any> {
+
+   static getMockDefaultConfig(): DefaultConfig {
+     return {
+-      'recordMode': 0,
++      'recordMode': 2,
+       'cuttingMode': 0,
+       'cuttingNumber': 100,
+       'cuttingByTitle': false,
+diff --git a/src/views/recorder/SettingPage.vue b/src/views/recorder/SettingPage.vue
+index cb0b387..b5d24ee 100644
+--- a/src/views/recorder/SettingPage.vue
++++ b/src/views/recorder/SettingPage.vue
+@@ -228,6 +228,10 @@ const RecordModes = [
+     label: '原始数据模式',
+     value: 1,
+   },
++  {
++    label: 'fMP4 分片模式',
++    value: 2,
++  },
+ ];
+
+ const CuttingModes = [
