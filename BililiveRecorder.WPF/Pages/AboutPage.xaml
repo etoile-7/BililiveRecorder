@@ -73,7 +73,7 @@
             </TextBlock>
             <StackPanel Orientation="Horizontal">
                 <TextBlock FontSize="16" Text="{l:Loc About_Copyright}"/>
-                <TextBlock FontSize="16" Text=" © Genteure" x:Name="CopyrightTextBlock"/>
+                <TextBlock FontSize="16" Text=" © Genteure / etoile-7" x:Name="CopyrightTextBlock"/>
             </StackPanel>
             <TextBlock FontSize="16" TextWrapping="Wrap" Text="{l:Loc About_License}"/>
             <StackPanel Orientation="Horizontal">
@@ -86,6 +86,10 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock FontSize="16" Text="{l:Loc About_Project}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ui:HyperlinkButton Padding="0" Content="https://github.com/etoile-7/BililiveRecorder" NavigateUri="https://github.com/etoile-7/BililiveRecorder"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="16" Text="原仓库：" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <ui:HyperlinkButton Padding="0" Content="https://github.com/BililiveRecorder/BililiveRecorder" NavigateUri="https://github.com/BililiveRecorder/BililiveRecorder"/>
             </StackPanel>
         </StackPanel>

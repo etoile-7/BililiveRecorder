@@ -7,14 +7,14 @@ name: Package Desktop Release
 # Prerequisites:
 # - A release must have been created and the release workflow must have completed
 # - The RELEASE_REPO_PAT secret must be configured with a PAT that has:
-#   - repo scope for the Bililive/soft.danmuji.org repository
+#   - repo scope for the fork binary repository configured in BINARY_REPO
 #
 # Usage:
 # 1. Go to Actions > Package Desktop Release
 # 2. Click "Run workflow"
 # 3. Enter the workflow run ID from the release workflow
 # 4. Click "Run workflow"
-# 5. Review and merge the created pull request in Bililive/soft.danmuji.org
+# 5. Review and merge the created pull request in the configured binary repository
 
 on:
   workflow_dispatch:
@@ -33,7 +33,7 @@ env:
   # Squirrel version must match the version used in the project (see BililiveRecorder.WPF.csproj)
   # Download from: https://github.com/clowd/Clowd.Squirrel/releases
   SQUIRREL_VERSION: '2.11.1'
-  BINARY_REPO: Bililive/soft.danmuji.org
+  BINARY_REPO: etoile-7/soft.danmuji.org
   BINARY_REPO_PATH: BililiveRecorder
 
 jobs:

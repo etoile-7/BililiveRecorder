@@ -86,7 +86,7 @@ export default function (data: ConfigEntry[]): string {
         "properties": {
             "$schema": {
                 "type": "string",
-                "default": "https://raw.githubusercontent.com/BililiveRecorder/BililiveRecorder/dev/configV3.schema.json"
+                "default": "https://raw.githubusercontent.com/etoile-7/BililiveRecorder/dev/configV3.schema.json"
             },
             "version": {
                 "const": 3

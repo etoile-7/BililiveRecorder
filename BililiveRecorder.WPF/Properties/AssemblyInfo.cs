@@ -6,11 +6,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("mikufans录播姬")]
-[assembly: AssemblyDescription("mikufans录播姬 by genteure")]
+[assembly: AssemblyDescription("mikufans录播姬 fork by etoile-7, based on the original project by Genteure")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Genteure")]
+[assembly: AssemblyCompany("etoile-7")]
 [assembly: AssemblyProduct("mikufans录播姬")]
-[assembly: AssemblyCopyright("Copyright © 2018-2025 Genteure")]
+[assembly: AssemblyCopyright("Copyright © 2018-2025 Genteure; fork modifications © 2026 etoile-7")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

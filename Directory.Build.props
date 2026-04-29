@@ -1,7 +1,7 @@
 <Project>
     <PropertyGroup>
-        <Copyright>Copyright © 2018-2025 Genteure</Copyright>
-        <Authors>Genteure</Authors>
+        <Copyright>Copyright © 2018-2025 Genteure; fork modifications © 2026 etoile-7</Copyright>
+        <Authors>Genteure; etoile-7</Authors>
         <Company>$(Authors)</Company>
         <LangVersion>11.0</LangVersion>
         <Nullable>enable</Nullable>

@@ -32,7 +32,7 @@ namespace BililiveRecorder.WPF
             this.logger.Debug("Checking updates");
             try
             {
-                using var updateManager = new UpdateManager(@"https://soft.danmuji.org/BililiveRecorder/");
+                using var updateManager = new UpdateManager(@"https://github.com/etoile-7/BililiveRecorder/releases/latest/download/");
 
                 if (!updateManager.IsInstalledApp)
                 {

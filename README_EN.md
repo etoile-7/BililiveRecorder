@@ -3,14 +3,20 @@
 
 # mikufans录播姬
 
-[![Build and Test](https://github.com/BililiveRecorder/BililiveRecorder/actions/workflows/build.yml/badge.svg?branch=dev)](https://github.com/BililiveRecorder/BililiveRecorder/actions/workflows/build.yml)
-[![Version](https://img.shields.io/github/tag/Bililive/BililiveRecorder.svg?label=Version)](#)
-[![License](https://img.shields.io/github/license/Bililive/BililiveRecorder.svg)](#)
-[![Crowdin](https://badges.crowdin.net/bililiverecorder/localized.svg)](https://crowdin.com/project/bililiverecorder)
+[![Build and Test](https://github.com/etoile-7/BililiveRecorder/actions/workflows/build.yml/badge.svg?branch=dev)](https://github.com/etoile-7/BililiveRecorder/actions/workflows/build.yml)
+[![Version](https://img.shields.io/github/tag/etoile-7/BililiveRecorder.svg?label=Version)](#)
+[![License](https://img.shields.io/github/license/etoile-7/BililiveRecorder.svg)](#)
+[![Upstream Crowdin](https://badges.crowdin.net/bililiverecorder/localized.svg)](https://crowdin.com/project/bililiverecorder)
 
 </div>
 
-[简体中文 README | Simplified Chinese](README_CN.md)
+[简体中文 README](README.md) | English
+
+## Fork Notice
+
+This repository is the [etoile-7/BililiveRecorder](https://github.com/etoile-7/BililiveRecorder) fork, based on the original [BililiveRecorder/BililiveRecorder](https://github.com/BililiveRecorder/BililiveRecorder) project.
+
+The original project's copyright, license, and contribution history remain with the original authors and contributors. Changes made in this fork are maintained by etoile-7.
 
 GitHub is a global platform, 和 theoretically, everyone should use English. But since this project is mostly meant for Chinese user and rely on a Chinese website [BiliBili](https://live.bilibili.com) ([_wikipedia_](https://en.wikipedia.org/wiki/Bilibili)), most things related to this project like code comments, documentations and other related repositories are written in Chinese. This README file will always use English so people like _you_ can understand what is this, and perhaps make some use out of it.
 
@@ -23,16 +29,15 @@ Software UI is available in
 
 ## Installation
 
-See [rec.danmuji.org](https://rec.danmuji.org) (in Chinese) for Windows installer with auto update.
+For this fork, please check the [releases](https://github.com/etoile-7/BililiveRecorder/releases) page first.
 
-Alernatively, you can download from [releases](https://github.com/BililiveRecorder/BililiveRecorder/releases) page.  
-The zip file available at the releases page does not have auto update enabled. You are welcome to watch this repository for new releases. (Click the "Watch" dropdown menu, then "Custom", and check the "Releases" checkbox).
+The original project provides a Windows installer with auto update at [rec.danmuji.org](https://rec.danmuji.org) (in Chinese). If you need the upstream official version, download it from the [original releases](https://github.com/BililiveRecorder/BililiveRecorder/releases) page.
 
-Binary files of the command line version are available for Linux, macOS, and Windows at [releases](https://github.com/BililiveRecorder/BililiveRecorder/releases).
+Binary files of the command line version are published from this fork's releases for Linux, macOS, and Windows.
 
-Docker images can be pulled from [Docker Hub `bililive/recorder`](https://hub.docker.com/r/bililive/recorder) or [`ghcr.io/bililiverecorder/bililiverecorder`](https://github.com/bililiverecorder/BililiveRecorder/pkgs/container/bililiverecorder).
+Docker images for this fork are published through GitHub Container Registry. The original project images remain available from [Docker Hub `bililive/recorder`](https://hub.docker.com/r/bililive/recorder) and [`ghcr.io/bililiverecorder/bililiverecorder`](https://github.com/bililiverecorder/BililiveRecorder/pkgs/container/bililiverecorder).
 
-See [rec.danmuji.org/user/install](https://rec.danmuji.org/user/install) for step by step installation guides (in Chinese).
+See [rec.danmuji.org/user/install](https://rec.danmuji.org/user/install) for the original project's step by step installation guides (in Chinese).
 
 ## Feature
 

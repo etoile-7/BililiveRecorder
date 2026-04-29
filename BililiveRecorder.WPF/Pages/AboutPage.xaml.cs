@@ -16,7 +16,7 @@ namespace BililiveRecorder.WPF.Pages
                 var match = Regex.Match(GitVersionInformation.CommitDate, @"^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})$");
                 if (match.Success)
                 {
-                    this.CopyrightTextBlock.Text = $" © {match.Groups["year"].Value} Genteure";
+                    this.CopyrightTextBlock.Text = $" © 2018-2025 Genteure / {match.Groups["year"].Value} etoile-7";
                 }
             }
         }

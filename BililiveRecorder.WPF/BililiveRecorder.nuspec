@@ -4,8 +4,8 @@
         <id>BililiveRecorder</id>
         <version>0.0.0</version>
         <title>录播姬</title>
-        <authors>Genteure</authors>
-        <owners>Genteure</owners>
+        <authors>Genteure; etoile-7</authors>
+        <owners>etoile-7</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>录播姬 安装包</description>
         <language>zh-CN</language>

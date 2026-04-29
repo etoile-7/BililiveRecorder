@@ -108,7 +108,7 @@ namespace BililiveRecorder.Web
                     c.SwaggerDoc("brec", new OpenApiInfo
                     {
                         Title = "录播姬 REST API",
-                        Description = "录播姬网站 [rec.danmuji.org](https://rec.danmuji.org/)  \n录播姬 GitHub [BililiveRecorder/BililiveRecorder](https://github.com/BililiveRecorder/BililiveRecorder)  \n\n" +
+                        Description = "本 fork GitHub [etoile-7/BililiveRecorder](https://github.com/etoile-7/BililiveRecorder)  \n原仓库 [BililiveRecorder/BililiveRecorder](https://github.com/BililiveRecorder/BililiveRecorder)  \n录播姬网站 [rec.danmuji.org](https://rec.danmuji.org/)  \n\n" +
                         "除了 REST API 以外，录播姬还有 Graphql API 可以使用。\n\n" +
                         "API 中的 objectId 在重启后会重新生成，不保存到配置文件。",
                         Version = "v1"

@@ -1,5 +1,5 @@
 {
-    "$comment": "Deprecated. Use https://raw.githubusercontent.com/BililiveRecorder/BililiveRecorder/dev/configV3.schema.json",
+    "$comment": "Deprecated. Use https://raw.githubusercontent.com/etoile-7/BililiveRecorder/dev/configV3.schema.json",
     "$schema": "http://json-schema.org/schema",
     "definitions": {
         "global-config": {

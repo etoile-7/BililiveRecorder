@@ -3,14 +3,20 @@
 
 # mikufans录播姬
 
-[![Build and Test](https://github.com/BililiveRecorder/BililiveRecorder/actions/workflows/build.yml/badge.svg?branch=dev)](https://github.com/BililiveRecorder/BililiveRecorder/actions/workflows/build.yml)
-[![Version](https://img.shields.io/github/tag/Bililive/BililiveRecorder.svg?label=Version)](#)
-[![License](https://img.shields.io/github/license/Bililive/BililiveRecorder.svg)](#)
-[![Crowdin](https://badges.crowdin.net/bililiverecorder/localized.svg)](https://crowdin.com/project/bililiverecorder)
+[![Build and Test](https://github.com/etoile-7/BililiveRecorder/actions/workflows/build.yml/badge.svg?branch=dev)](https://github.com/etoile-7/BililiveRecorder/actions/workflows/build.yml)
+[![Version](https://img.shields.io/github/tag/etoile-7/BililiveRecorder.svg?label=Version)](#)
+[![License](https://img.shields.io/github/license/etoile-7/BililiveRecorder.svg)](#)
+[![上游 Crowdin（翻译平台）](https://badges.crowdin.net/bililiverecorder/localized.svg)](https://crowdin.com/project/bililiverecorder)
 
 </div>
 
-[English README | Simplified Chinese](README_EN.md)
+[English README（英文说明）](README_EN.md) | 简体中文
+
+## 仓库说明
+
+本仓库是 [etoile-7/BililiveRecorder](https://github.com/etoile-7/BililiveRecorder) 的二改版本，基于原项目 [BililiveRecorder/BililiveRecorder](https://github.com/BililiveRecorder/BililiveRecorder)。
+
+原项目版权、许可证和贡献记录仍归原作者及贡献者所有；本 fork（二改分支）中新增和调整的内容由 etoile-7 维护。
 
 Software UI is available in
 
@@ -21,15 +27,15 @@ Software UI is available in
 
 ## 安装
 
-在 [rec.danmuji.org](https://rec.danmuji.org) 提供了有自动更新功能的安装包。
+本 fork（二改分支）的发布包请优先查看 [releases（发布页）](https://github.com/etoile-7/BililiveRecorder/releases)。
 
-或者也可以在 [releases](https://github.com/BililiveRecorder/BililiveRecorder/releases) 页面下载 “绿色版” 压缩包，没有版本检查和更新功能。你可以 watch 本仓库的新版本发布（点击 “Watch” 、点击 “Custom”、勾选 “Releases”）。
+原项目在 [rec.danmuji.org](https://rec.danmuji.org) 提供了有自动更新功能的安装包；如果需要使用上游官方版本，也可以前往 [原仓库 releases](https://github.com/BililiveRecorder/BililiveRecorder/releases) 页面下载。
 
-命令行版可执行文件可以在 [releases](https://github.com/BililiveRecorder/BililiveRecorder/releases) 页面下载，支持 Linux、 macOS 和 Windows 系统。
+命令行版可执行文件会随本 fork（二改分支）的 releases（发布页）发布，支持 Linux、 macOS 和 Windows 系统。
 
-可以在 [Docker Hub `bililive/recorder`](https://hub.docker.com/r/bililive/recorder) 或 [`ghcr.io/bililiverecorder/bililiverecorder`](https://github.com/bililiverecorder/BililiveRecorder/pkgs/container/bililiverecorder) 拉取 Docker 镜像。
+本 fork（二改分支）的 Docker（容器）镜像随 GitHub Container Registry（GitHub 容器镜像仓库）发布；原项目镜像仍在 [Docker Hub（Docker 镜像仓库） `bililive/recorder`](https://hub.docker.com/r/bililive/recorder) 和 [`ghcr.io/bililiverecorder/bililiverecorder`](https://github.com/bililiverecorder/BililiveRecorder/pkgs/container/bililiverecorder)。
 
-安装使用教程在 [rec.danmuji.org/user/install](https://rec.danmuji.org/user/install)。
+原项目安装使用教程在 [rec.danmuji.org/user/install](https://rec.danmuji.org/user/install)。
 
 ## 功能
 
