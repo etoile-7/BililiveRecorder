@@ -3,7 +3,9 @@ import { ConfigEntry, ConfigEntryType } from "../types"
 function mapTypeToJsonSchema(id: string, type: string, defaultValue: any) {
     switch (type) {
         case "RecordMode":
-            return { type: "integer", default: 0, enum: [0, 1], "description": "0: Standard\n1: Raw" };
+            return { type: "integer", default: 0, enum: [0, 1, 2], "description": "0: Standard\n1: RawData\n2: Fmp4" };
+        case "Fmp4UnsupportedCodecPolicy":
+            return { type: "integer", default: 0, enum: [0, 1], "description": "0: 失败并结束会话\n1: 允许继续录制" };
         case "CuttingMode":
             return { type: "integer", default: 0, enum: [0, 1, 2], "description": "0: 禁用\n1: 根据时间切割\n2: 根据文件大小切割" };
         case "AllowedAddressFamily":

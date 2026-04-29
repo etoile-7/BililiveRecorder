@@ -388,9 +388,113 @@
               "default": 0,
               "enum": [
                 0,
+                1,
+                2
+              ],
+              "description": "0: Standard\n1: RawData\n2: Fmp4"
+            }
+          }
+        },
+        "FfmpegExecutablePath": {
+          "description": "FFmpeg 可执行文件路径\n默认: ffmpeg",
+          "markdownDescription": "FFmpeg 可执行文件路径  \n默认: `ffmpeg `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": "ffmpeg"
+            }
+          }
+        },
+        "FfmpegExtraArgs": {
+          "description": "FFmpeg 额外参数\n默认: ",
+          "markdownDescription": "FFmpeg 额外参数  \n默认: ` `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "Fmp4SegmentDurationSeconds": {
+          "description": "fMP4 分片时长秒数\n默认: 6",
+          "markdownDescription": "fMP4 分片时长秒数  \n默认: `6 `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4294967295,
+              "default": 6
+            }
+          }
+        },
+        "Fmp4InitFileName": {
+          "description": "fMP4 初始化文件名\n默认: init.mp4",
+          "markdownDescription": "fMP4 初始化文件名  \n默认: `init.mp4 `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": "init.mp4"
+            }
+          }
+        },
+        "Fmp4SegmentsDirectoryName": {
+          "description": "fMP4 分片目录名\n默认: segments",
+          "markdownDescription": "fMP4 分片目录名  \n默认: `segments `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": "segments"
+            }
+          }
+        },
+        "Fmp4UnsupportedCodecPolicy": {
+          "description": "fMP4 不支持编码处理策略\n默认: Fmp4UnsupportedCodecPolicy.FailSession",
+          "markdownDescription": "fMP4 不支持编码处理策略  \n默认: `Fmp4UnsupportedCodecPolicy.FailSession `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "integer",
+              "default": 0,
+              "enum": [
+                0,
                 1
               ],
-              "description": "0: Standard\n1: Raw"
+              "description": "0: 失败并结束会话\n1: 允许继续录制"
             }
           }
         },
@@ -665,9 +769,113 @@
               "default": 0,
               "enum": [
                 0,
+                1,
+                2
+              ],
+              "description": "0: Standard\n1: RawData\n2: Fmp4"
+            }
+          }
+        },
+        "FfmpegExecutablePath": {
+          "description": "FFmpeg 可执行文件路径\n默认: ffmpeg",
+          "markdownDescription": "FFmpeg 可执行文件路径  \n默认: `ffmpeg `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": "ffmpeg"
+            }
+          }
+        },
+        "FfmpegExtraArgs": {
+          "description": "FFmpeg 额外参数\n默认: ",
+          "markdownDescription": "FFmpeg 额外参数  \n默认: ` `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "Fmp4SegmentDurationSeconds": {
+          "description": "fMP4 分片时长秒数\n默认: 6",
+          "markdownDescription": "fMP4 分片时长秒数  \n默认: `6 `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4294967295,
+              "default": 6
+            }
+          }
+        },
+        "Fmp4InitFileName": {
+          "description": "fMP4 初始化文件名\n默认: init.mp4",
+          "markdownDescription": "fMP4 初始化文件名  \n默认: `init.mp4 `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": "init.mp4"
+            }
+          }
+        },
+        "Fmp4SegmentsDirectoryName": {
+          "description": "fMP4 分片目录名\n默认: segments",
+          "markdownDescription": "fMP4 分片目录名  \n默认: `segments `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "string",
+              "default": "segments"
+            }
+          }
+        },
+        "Fmp4UnsupportedCodecPolicy": {
+          "description": "fMP4 不支持编码处理策略\n默认: Fmp4UnsupportedCodecPolicy.FailSession",
+          "markdownDescription": "fMP4 不支持编码处理策略  \n默认: `Fmp4UnsupportedCodecPolicy.FailSession `\n\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "HasValue": {
+              "type": "boolean",
+              "default": true
+            },
+            "Value": {
+              "type": "integer",
+              "default": 0,
+              "enum": [
+                0,
                 1
               ],
-              "description": "0: Standard\n1: Raw"
+              "description": "0: 失败并结束会话\n1: 允许继续录制"
             }
           }
         },

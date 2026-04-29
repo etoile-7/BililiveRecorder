@@ -14,6 +14,12 @@ namespace BililiveRecorder.Web.Models
     {
         public bool? AutoRecord { get; set; }
         public Optional<RecordMode>? OptionalRecordMode { get; set; }
+        public Optional<string?>? OptionalFfmpegExecutablePath { get; set; }
+        public Optional<string?>? OptionalFfmpegExtraArgs { get; set; }
+        public Optional<uint>? OptionalFmp4SegmentDurationSeconds { get; set; }
+        public Optional<string?>? OptionalFmp4InitFileName { get; set; }
+        public Optional<string?>? OptionalFmp4SegmentsDirectoryName { get; set; }
+        public Optional<Fmp4UnsupportedCodecPolicy>? OptionalFmp4UnsupportedCodecPolicy { get; set; }
         public Optional<CuttingMode>? OptionalCuttingMode { get; set; }
         public Optional<uint>? OptionalCuttingNumber { get; set; }
         public Optional<bool>? OptionalCuttingByTitle { get; set; }
@@ -32,6 +38,12 @@ namespace BililiveRecorder.Web.Models
         {
             if (this.AutoRecord.HasValue) config.AutoRecord = this.AutoRecord.Value;
             if (this.OptionalRecordMode.HasValue) config.OptionalRecordMode = this.OptionalRecordMode.Value;
+            if (this.OptionalFfmpegExecutablePath.HasValue) config.OptionalFfmpegExecutablePath = this.OptionalFfmpegExecutablePath.Value;
+            if (this.OptionalFfmpegExtraArgs.HasValue) config.OptionalFfmpegExtraArgs = this.OptionalFfmpegExtraArgs.Value;
+            if (this.OptionalFmp4SegmentDurationSeconds.HasValue) config.OptionalFmp4SegmentDurationSeconds = this.OptionalFmp4SegmentDurationSeconds.Value;
+            if (this.OptionalFmp4InitFileName.HasValue) config.OptionalFmp4InitFileName = this.OptionalFmp4InitFileName.Value;
+            if (this.OptionalFmp4SegmentsDirectoryName.HasValue) config.OptionalFmp4SegmentsDirectoryName = this.OptionalFmp4SegmentsDirectoryName.Value;
+            if (this.OptionalFmp4UnsupportedCodecPolicy.HasValue) config.OptionalFmp4UnsupportedCodecPolicy = this.OptionalFmp4UnsupportedCodecPolicy.Value;
             if (this.OptionalCuttingMode.HasValue) config.OptionalCuttingMode = this.OptionalCuttingMode.Value;
             if (this.OptionalCuttingNumber.HasValue) config.OptionalCuttingNumber = this.OptionalCuttingNumber.Value;
             if (this.OptionalCuttingByTitle.HasValue) config.OptionalCuttingByTitle = this.OptionalCuttingByTitle.Value;
@@ -51,6 +63,12 @@ namespace BililiveRecorder.Web.Models
     public class SetGlobalConfig
     {
         public Optional<RecordMode>? OptionalRecordMode { get; set; }
+        public Optional<string?>? OptionalFfmpegExecutablePath { get; set; }
+        public Optional<string?>? OptionalFfmpegExtraArgs { get; set; }
+        public Optional<uint>? OptionalFmp4SegmentDurationSeconds { get; set; }
+        public Optional<string?>? OptionalFmp4InitFileName { get; set; }
+        public Optional<string?>? OptionalFmp4SegmentsDirectoryName { get; set; }
+        public Optional<Fmp4UnsupportedCodecPolicy>? OptionalFmp4UnsupportedCodecPolicy { get; set; }
         public Optional<CuttingMode>? OptionalCuttingMode { get; set; }
         public Optional<uint>? OptionalCuttingNumber { get; set; }
         public Optional<bool>? OptionalCuttingByTitle { get; set; }
@@ -89,6 +107,12 @@ namespace BililiveRecorder.Web.Models
         public void ApplyTo(GlobalConfig config)
         {
             if (this.OptionalRecordMode.HasValue) config.OptionalRecordMode = this.OptionalRecordMode.Value;
+            if (this.OptionalFfmpegExecutablePath.HasValue) config.OptionalFfmpegExecutablePath = this.OptionalFfmpegExecutablePath.Value;
+            if (this.OptionalFfmpegExtraArgs.HasValue) config.OptionalFfmpegExtraArgs = this.OptionalFfmpegExtraArgs.Value;
+            if (this.OptionalFmp4SegmentDurationSeconds.HasValue) config.OptionalFmp4SegmentDurationSeconds = this.OptionalFmp4SegmentDurationSeconds.Value;
+            if (this.OptionalFmp4InitFileName.HasValue) config.OptionalFmp4InitFileName = this.OptionalFmp4InitFileName.Value;
+            if (this.OptionalFmp4SegmentsDirectoryName.HasValue) config.OptionalFmp4SegmentsDirectoryName = this.OptionalFmp4SegmentsDirectoryName.Value;
+            if (this.OptionalFmp4UnsupportedCodecPolicy.HasValue) config.OptionalFmp4UnsupportedCodecPolicy = this.OptionalFmp4UnsupportedCodecPolicy.Value;
             if (this.OptionalCuttingMode.HasValue) config.OptionalCuttingMode = this.OptionalCuttingMode.Value;
             if (this.OptionalCuttingNumber.HasValue) config.OptionalCuttingNumber = this.OptionalCuttingNumber.Value;
             if (this.OptionalCuttingByTitle.HasValue) config.OptionalCuttingByTitle = this.OptionalCuttingByTitle.Value;
@@ -134,6 +158,12 @@ namespace BililiveRecorder.Web.Models.Rest
     {
         public bool AutoRecord { get; set; }
         public Optional<RecordMode> OptionalRecordMode { get; set; }
+        public Optional<string?> OptionalFfmpegExecutablePath { get; set; }
+        public Optional<string?> OptionalFfmpegExtraArgs { get; set; }
+        public Optional<uint> OptionalFmp4SegmentDurationSeconds { get; set; }
+        public Optional<string?> OptionalFmp4InitFileName { get; set; }
+        public Optional<string?> OptionalFmp4SegmentsDirectoryName { get; set; }
+        public Optional<Fmp4UnsupportedCodecPolicy> OptionalFmp4UnsupportedCodecPolicy { get; set; }
         public Optional<CuttingMode> OptionalCuttingMode { get; set; }
         public Optional<uint> OptionalCuttingNumber { get; set; }
         public Optional<bool> OptionalCuttingByTitle { get; set; }
@@ -152,6 +182,12 @@ namespace BililiveRecorder.Web.Models.Rest
     public class GlobalConfigDto
     {
         public Optional<RecordMode> OptionalRecordMode { get; set; }
+        public Optional<string?> OptionalFfmpegExecutablePath { get; set; }
+        public Optional<string?> OptionalFfmpegExtraArgs { get; set; }
+        public Optional<uint> OptionalFmp4SegmentDurationSeconds { get; set; }
+        public Optional<string?> OptionalFmp4InitFileName { get; set; }
+        public Optional<string?> OptionalFmp4SegmentsDirectoryName { get; set; }
+        public Optional<Fmp4UnsupportedCodecPolicy> OptionalFmp4UnsupportedCodecPolicy { get; set; }
         public Optional<CuttingMode> OptionalCuttingMode { get; set; }
         public Optional<uint> OptionalCuttingNumber { get; set; }
         public Optional<bool> OptionalCuttingByTitle { get; set; }
@@ -199,6 +235,12 @@ namespace BililiveRecorder.Web.Models.Graphql
             this.Field(x => x.RoomId);
             this.Field(x => x.AutoRecord);
             this.Field(x => x.OptionalRecordMode, type: typeof(HierarchicalOptionalType<RecordMode>));
+            this.Field(x => x.OptionalFfmpegExecutablePath, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFfmpegExtraArgs, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFmp4SegmentDurationSeconds, type: typeof(HierarchicalOptionalType<uint>));
+            this.Field(x => x.OptionalFmp4InitFileName, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFmp4SegmentsDirectoryName, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFmp4UnsupportedCodecPolicy, type: typeof(HierarchicalOptionalType<Fmp4UnsupportedCodecPolicy>));
             this.Field(x => x.OptionalCuttingMode, type: typeof(HierarchicalOptionalType<CuttingMode>));
             this.Field(x => x.OptionalCuttingNumber, type: typeof(HierarchicalOptionalType<uint>));
             this.Field(x => x.OptionalCuttingByTitle, type: typeof(HierarchicalOptionalType<bool>));
@@ -220,6 +262,12 @@ namespace BililiveRecorder.Web.Models.Graphql
         public GlobalConfigType()
         {
             this.Field(x => x.OptionalRecordMode, type: typeof(HierarchicalOptionalType<RecordMode>));
+            this.Field(x => x.OptionalFfmpegExecutablePath, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFfmpegExtraArgs, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFmp4SegmentDurationSeconds, type: typeof(HierarchicalOptionalType<uint>));
+            this.Field(x => x.OptionalFmp4InitFileName, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFmp4SegmentsDirectoryName, type: typeof(HierarchicalOptionalType<string>));
+            this.Field(x => x.OptionalFmp4UnsupportedCodecPolicy, type: typeof(HierarchicalOptionalType<Fmp4UnsupportedCodecPolicy>));
             this.Field(x => x.OptionalCuttingMode, type: typeof(HierarchicalOptionalType<CuttingMode>));
             this.Field(x => x.OptionalCuttingNumber, type: typeof(HierarchicalOptionalType<uint>));
             this.Field(x => x.OptionalCuttingByTitle, type: typeof(HierarchicalOptionalType<bool>));
@@ -262,6 +310,12 @@ namespace BililiveRecorder.Web.Models.Graphql
         public DefaultConfigType()
         {
             this.Field(x => x.RecordMode);
+            this.Field(x => x.FfmpegExecutablePath);
+            this.Field(x => x.FfmpegExtraArgs);
+            this.Field(x => x.Fmp4SegmentDurationSeconds);
+            this.Field(x => x.Fmp4InitFileName);
+            this.Field(x => x.Fmp4SegmentsDirectoryName);
+            this.Field(x => x.Fmp4UnsupportedCodecPolicy);
             this.Field(x => x.CuttingMode);
             this.Field(x => x.CuttingNumber);
             this.Field(x => x.CuttingByTitle);
@@ -305,6 +359,12 @@ namespace BililiveRecorder.Web.Models.Graphql
         {
             this.Field(x => x.AutoRecord, nullable: true);
             this.Field(x => x.OptionalRecordMode, nullable: true, type: typeof(HierarchicalOptionalInputType<RecordMode>));
+            this.Field(x => x.OptionalFfmpegExecutablePath, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFfmpegExtraArgs, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFmp4SegmentDurationSeconds, nullable: true, type: typeof(HierarchicalOptionalInputType<uint>));
+            this.Field(x => x.OptionalFmp4InitFileName, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFmp4SegmentsDirectoryName, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFmp4UnsupportedCodecPolicy, nullable: true, type: typeof(HierarchicalOptionalInputType<Fmp4UnsupportedCodecPolicy>));
             this.Field(x => x.OptionalCuttingMode, nullable: true, type: typeof(HierarchicalOptionalInputType<CuttingMode>));
             this.Field(x => x.OptionalCuttingNumber, nullable: true, type: typeof(HierarchicalOptionalInputType<uint>));
             this.Field(x => x.OptionalCuttingByTitle, nullable: true, type: typeof(HierarchicalOptionalInputType<bool>));
@@ -326,6 +386,12 @@ namespace BililiveRecorder.Web.Models.Graphql
         public SetGlobalConfigType()
         {
             this.Field(x => x.OptionalRecordMode, nullable: true, type: typeof(HierarchicalOptionalInputType<RecordMode>));
+            this.Field(x => x.OptionalFfmpegExecutablePath, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFfmpegExtraArgs, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFmp4SegmentDurationSeconds, nullable: true, type: typeof(HierarchicalOptionalInputType<uint>));
+            this.Field(x => x.OptionalFmp4InitFileName, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFmp4SegmentsDirectoryName, nullable: true, type: typeof(HierarchicalOptionalInputType<string>));
+            this.Field(x => x.OptionalFmp4UnsupportedCodecPolicy, nullable: true, type: typeof(HierarchicalOptionalInputType<Fmp4UnsupportedCodecPolicy>));
             this.Field(x => x.OptionalCuttingMode, nullable: true, type: typeof(HierarchicalOptionalInputType<CuttingMode>));
             this.Field(x => x.OptionalCuttingNumber, nullable: true, type: typeof(HierarchicalOptionalInputType<uint>));
             this.Field(x => x.OptionalCuttingByTitle, nullable: true, type: typeof(HierarchicalOptionalInputType<bool>));

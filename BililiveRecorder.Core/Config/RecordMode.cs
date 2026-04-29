@@ -4,5 +4,6 @@ namespace BililiveRecorder.Core.Config
     {
         Standard = 0,
         RawData = 1,
+        Fmp4 = 2,
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using BililiveRecorder.Core;
+using BililiveRecorder.Core.Artifacts;
 using BililiveRecorder.Core.Config.V3;
 using BililiveRecorder.Web.Models;
 using BililiveRecorder.Web.Models.Graphql;
@@ -12,10 +13,12 @@ namespace BililiveRecorder.Web.Graphql
     internal class RecorderQuery : ObjectGraphType
     {
         private readonly IRecorder recorder;
+        private readonly IRecordResourceQueryService recordResourceQueryService;
 
-        public RecorderQuery(IRecorder recorder)
+        public RecorderQuery(IRecorder recorder, IRecordResourceQueryService recordResourceQueryService)
         {
             this.recorder = recorder ?? throw new ArgumentNullException(nameof(recorder));
+            this.recordResourceQueryService = recordResourceQueryService ?? throw new ArgumentNullException(nameof(recordResourceQueryService));
 
             this.SetupFields();
         }
@@ -73,6 +76,30 @@ namespace BililiveRecorder.Web.Graphql
                     return room;
                 }
             );
+
+            this.Field<ListGraphType<RecordSessionDescriptorType>>("sessions",
+                arguments: new QueryArguments(
+                    new QueryArgument<BooleanGraphType> { Name = "activeOnly" }
+                ),
+                resolve: context =>
+                {
+                    var sessions = this.recordResourceQueryService.ListSessions();
+                    return context.GetArgument<bool>("activeOnly")
+                        ? sessions.Where(x => x.Status == RecordSessionStatus.Recording)
+                        : sessions;
+                });
+
+            this.Field<RecordSessionDescriptorType>("session",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IdGraphType>> { Name = "sessionId" }),
+                resolve: context => this.recordResourceQueryService.GetSession(context.GetArgument<Guid>("sessionId")));
+
+            this.Field<ListGraphType<RecordSegmentDescriptorType>>("segments",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IdGraphType>> { Name = "sessionId" }),
+                resolve: context => this.recordResourceQueryService.ListSegments(context.GetArgument<Guid>("sessionId")));
+
+            this.Field<RecordPlaybackManifestType>("playbackManifest",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IdGraphType>> { Name = "sessionId" }),
+                resolve: context => this.recordResourceQueryService.GetPlaybackManifest(context.GetArgument<Guid>("sessionId")));
         }
     }
 }

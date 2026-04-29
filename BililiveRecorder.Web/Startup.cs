@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
 using BililiveRecorder.Core;
+using BililiveRecorder.Core.Artifacts;
 using BililiveRecorder.Web.Graphql;
 using BililiveRecorder.Web.Models.Rest;
 using GraphQL;
@@ -53,6 +54,7 @@ namespace BililiveRecorder.Web
             // 如果 IRecorder 没有被注册过才会添加，模拟调试用
             // 实际运行时在 BililiveRecorder.Web.Program 里会加上真的 IRecorder
             services.TryAddSingleton<IRecorder>(new FakeRecorderForWeb());
+            services.TryAddSingleton<IRecordResourceQueryService, RecordResourceQueryService>();
 
 #if DEBUG
             // TODO 移动到一个单独的测试项目里

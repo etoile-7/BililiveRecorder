@@ -75,7 +75,7 @@ namespace BililiveRecorder.Core.Templating
             this.logger = logger?.ForContext<FileNameGenerator>() ?? Logger.None;
         }
 
-        public FileNameTemplateOutput CreateFilePath(FileNameTemplateContext data)
+        public FileNameTemplateOutput CreateFilePath(FileNameTemplateContext data, string requiredExtension = ".flv", bool appendRequiredExtension = true)
         {
             var status = FileNameTemplateStatus.Success;
             string? errorMessage = null;
@@ -122,14 +122,10 @@ namespace BililiveRecorder.Core.Templating
                 goto returnDefaultPath;
             }
 
-            var ext = Path.GetExtension(relativePath);
-            if (!ext.Equals(".flv", StringComparison.OrdinalIgnoreCase))
+            (relativePath, fullPath, var extensionAdjusted) = EnsureExtension(relativePath, fullPath, skipFullPath, requiredExtension, appendRequiredExtension);
+            if (extensionAdjusted)
             {
-                this.logger.Warning("录播姬只支持 FLV 文件格式，将在录制文件后缀名 {ExtensionName} 后添加 {DotFlv}。", ext, ".flv");
-                relativePath += ".flv";
-
-                if (!skipFullPath)
-                    fullPath += ".flv";
+                this.logger.Warning("录制文件后缀名已调整为 {ExtensionName}。", requiredExtension);
             }
 
             if (!skipFullPath && File.Exists(fullPath))
@@ -145,8 +141,36 @@ namespace BililiveRecorder.Core.Templating
 returnDefaultPath:
             var defaultRelativePath = RemoveInvalidFileName(defaultTemplate.Render(context));
             var defaultFullPath = workDirectory is null ? null : Path.GetFullPath(Path.Combine(workDirectory, defaultRelativePath));
+            (defaultRelativePath, defaultFullPath, _) = EnsureExtension(defaultRelativePath, defaultFullPath, skipFullPath, requiredExtension, appendRequiredExtension);
 
             return new FileNameTemplateOutput(status, errorMessage, defaultRelativePath, defaultFullPath);
+        }
+
+        private static (string relativePath, string? fullPath, bool adjusted) EnsureExtension(
+            string relativePath,
+            string? fullPath,
+            bool skipFullPath,
+            string requiredExtension,
+            bool appendRequiredExtension)
+        {
+            var ext = Path.GetExtension(relativePath);
+            if (ext.Equals(requiredExtension, StringComparison.OrdinalIgnoreCase))
+                return (relativePath, fullPath, false);
+
+            if (appendRequiredExtension || string.IsNullOrWhiteSpace(ext))
+            {
+                relativePath += requiredExtension;
+                if (!skipFullPath)
+                    fullPath += requiredExtension;
+            }
+            else
+            {
+                relativePath = Path.ChangeExtension(relativePath, requiredExtension);
+                if (!skipFullPath)
+                    fullPath = Path.ChangeExtension(fullPath, requiredExtension);
+            }
+
+            return (relativePath, fullPath, true);
         }
 
         private class JContainerValue : ObjectValueBase

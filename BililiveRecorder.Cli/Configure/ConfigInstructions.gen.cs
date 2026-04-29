@@ -15,6 +15,12 @@ namespace BililiveRecorder.Cli.Configure
         [Description("[grey]Exit[/]")]
         Exit,
         RecordMode,
+        FfmpegExecutablePath,
+        FfmpegExtraArgs,
+        Fmp4SegmentDurationSeconds,
+        Fmp4InitFileName,
+        Fmp4SegmentsDirectoryName,
+        Fmp4UnsupportedCodecPolicy,
         CuttingMode,
         CuttingNumber,
         CuttingByTitle,
@@ -57,6 +63,12 @@ namespace BililiveRecorder.Cli.Configure
         RoomId,
         AutoRecord,
         RecordMode,
+        FfmpegExecutablePath,
+        FfmpegExtraArgs,
+        Fmp4SegmentDurationSeconds,
+        Fmp4InitFileName,
+        Fmp4SegmentsDirectoryName,
+        Fmp4UnsupportedCodecPolicy,
         CuttingMode,
         CuttingNumber,
         CuttingByTitle,
@@ -79,6 +91,12 @@ namespace BililiveRecorder.Cli.Configure
         static ConfigInstructions()
         {
             GlobalConfig.Add(GlobalConfigProperties.RecordMode, new ConfigInstruction<GlobalConfig, RecordMode>(config => config.HasRecordMode = false, (config, value) => config.RecordMode = value) { Name = "RecordMode", CanBeOptional = true });
+            GlobalConfig.Add(GlobalConfigProperties.FfmpegExecutablePath, new ConfigInstruction<GlobalConfig, string>(config => config.HasFfmpegExecutablePath = false, (config, value) => config.FfmpegExecutablePath = value) { Name = "FfmpegExecutablePath", CanBeOptional = true });
+            GlobalConfig.Add(GlobalConfigProperties.FfmpegExtraArgs, new ConfigInstruction<GlobalConfig, string>(config => config.HasFfmpegExtraArgs = false, (config, value) => config.FfmpegExtraArgs = value) { Name = "FfmpegExtraArgs", CanBeOptional = true });
+            GlobalConfig.Add(GlobalConfigProperties.Fmp4SegmentDurationSeconds, new ConfigInstruction<GlobalConfig, uint>(config => config.HasFmp4SegmentDurationSeconds = false, (config, value) => config.Fmp4SegmentDurationSeconds = value) { Name = "Fmp4SegmentDurationSeconds", CanBeOptional = true });
+            GlobalConfig.Add(GlobalConfigProperties.Fmp4InitFileName, new ConfigInstruction<GlobalConfig, string>(config => config.HasFmp4InitFileName = false, (config, value) => config.Fmp4InitFileName = value) { Name = "Fmp4InitFileName", CanBeOptional = true });
+            GlobalConfig.Add(GlobalConfigProperties.Fmp4SegmentsDirectoryName, new ConfigInstruction<GlobalConfig, string>(config => config.HasFmp4SegmentsDirectoryName = false, (config, value) => config.Fmp4SegmentsDirectoryName = value) { Name = "Fmp4SegmentsDirectoryName", CanBeOptional = true });
+            GlobalConfig.Add(GlobalConfigProperties.Fmp4UnsupportedCodecPolicy, new ConfigInstruction<GlobalConfig, Fmp4UnsupportedCodecPolicy>(config => config.HasFmp4UnsupportedCodecPolicy = false, (config, value) => config.Fmp4UnsupportedCodecPolicy = value) { Name = "Fmp4UnsupportedCodecPolicy", CanBeOptional = true });
             GlobalConfig.Add(GlobalConfigProperties.CuttingMode, new ConfigInstruction<GlobalConfig, CuttingMode>(config => config.HasCuttingMode = false, (config, value) => config.CuttingMode = value) { Name = "CuttingMode", CanBeOptional = true });
             GlobalConfig.Add(GlobalConfigProperties.CuttingNumber, new ConfigInstruction<GlobalConfig, uint>(config => config.HasCuttingNumber = false, (config, value) => config.CuttingNumber = value) { Name = "CuttingNumber", CanBeOptional = true });
             GlobalConfig.Add(GlobalConfigProperties.CuttingByTitle, new ConfigInstruction<GlobalConfig, bool>(config => config.HasCuttingByTitle = false, (config, value) => config.CuttingByTitle = value) { Name = "CuttingByTitle", CanBeOptional = true });
@@ -117,6 +135,12 @@ namespace BililiveRecorder.Cli.Configure
             RoomConfig.Add(RoomConfigProperties.RoomId, new ConfigInstruction<RoomConfig, int>(config => config.HasRoomId = false, (config, value) => config.RoomId = value) { Name = "RoomId", CanBeOptional = false });
             RoomConfig.Add(RoomConfigProperties.AutoRecord, new ConfigInstruction<RoomConfig, bool>(config => config.HasAutoRecord = false, (config, value) => config.AutoRecord = value) { Name = "AutoRecord", CanBeOptional = false });
             RoomConfig.Add(RoomConfigProperties.RecordMode, new ConfigInstruction<RoomConfig, RecordMode>(config => config.HasRecordMode = false, (config, value) => config.RecordMode = value) { Name = "RecordMode", CanBeOptional = true });
+            RoomConfig.Add(RoomConfigProperties.FfmpegExecutablePath, new ConfigInstruction<RoomConfig, string>(config => config.HasFfmpegExecutablePath = false, (config, value) => config.FfmpegExecutablePath = value) { Name = "FfmpegExecutablePath", CanBeOptional = true });
+            RoomConfig.Add(RoomConfigProperties.FfmpegExtraArgs, new ConfigInstruction<RoomConfig, string>(config => config.HasFfmpegExtraArgs = false, (config, value) => config.FfmpegExtraArgs = value) { Name = "FfmpegExtraArgs", CanBeOptional = true });
+            RoomConfig.Add(RoomConfigProperties.Fmp4SegmentDurationSeconds, new ConfigInstruction<RoomConfig, uint>(config => config.HasFmp4SegmentDurationSeconds = false, (config, value) => config.Fmp4SegmentDurationSeconds = value) { Name = "Fmp4SegmentDurationSeconds", CanBeOptional = true });
+            RoomConfig.Add(RoomConfigProperties.Fmp4InitFileName, new ConfigInstruction<RoomConfig, string>(config => config.HasFmp4InitFileName = false, (config, value) => config.Fmp4InitFileName = value) { Name = "Fmp4InitFileName", CanBeOptional = true });
+            RoomConfig.Add(RoomConfigProperties.Fmp4SegmentsDirectoryName, new ConfigInstruction<RoomConfig, string>(config => config.HasFmp4SegmentsDirectoryName = false, (config, value) => config.Fmp4SegmentsDirectoryName = value) { Name = "Fmp4SegmentsDirectoryName", CanBeOptional = true });
+            RoomConfig.Add(RoomConfigProperties.Fmp4UnsupportedCodecPolicy, new ConfigInstruction<RoomConfig, Fmp4UnsupportedCodecPolicy>(config => config.HasFmp4UnsupportedCodecPolicy = false, (config, value) => config.Fmp4UnsupportedCodecPolicy = value) { Name = "Fmp4UnsupportedCodecPolicy", CanBeOptional = true });
             RoomConfig.Add(RoomConfigProperties.CuttingMode, new ConfigInstruction<RoomConfig, CuttingMode>(config => config.HasCuttingMode = false, (config, value) => config.CuttingMode = value) { Name = "CuttingMode", CanBeOptional = true });
             RoomConfig.Add(RoomConfigProperties.CuttingNumber, new ConfigInstruction<RoomConfig, uint>(config => config.HasCuttingNumber = false, (config, value) => config.CuttingNumber = value) { Name = "CuttingNumber", CanBeOptional = true });
             RoomConfig.Add(RoomConfigProperties.CuttingByTitle, new ConfigInstruction<RoomConfig, bool>(config => config.HasCuttingByTitle = false, (config, value) => config.CuttingByTitle = value) { Name = "CuttingByTitle", CanBeOptional = true });

@@ -13,6 +13,7 @@ export type ConfigValueType =
     | "uint"
     | "bool"
     | "RecordMode"
+    | "Fmp4UnsupportedCodecPolicy"
     | "CuttingMode"
     | "AllowedAddressFamily"
     | "DanmakuTransportMode"

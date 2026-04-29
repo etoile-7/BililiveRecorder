@@ -24,6 +24,53 @@ export const data: Array<ConfigEntry> = [
         default: "RecordMode.Standard"
     },
     {
+        id: "FfmpegExecutablePath",
+        name: "FFmpeg 可执行文件路径",
+        type: "string?",
+        configType: "room",
+        advancedConfig: true,
+        default: "ffmpeg"
+    },
+    {
+        id: "FfmpegExtraArgs",
+        name: "FFmpeg 额外参数",
+        type: "string?",
+        configType: "room",
+        advancedConfig: true,
+        default: ""
+    },
+    {
+        id: "Fmp4SegmentDurationSeconds",
+        name: "fMP4 分片时长秒数",
+        type: "uint",
+        configType: "room",
+        default: 6
+    },
+    {
+        id: "Fmp4InitFileName",
+        name: "fMP4 初始化文件名",
+        type: "string?",
+        configType: "room",
+        advancedConfig: true,
+        default: "init.mp4"
+    },
+    {
+        id: "Fmp4SegmentsDirectoryName",
+        name: "fMP4 分片目录名",
+        type: "string?",
+        configType: "room",
+        advancedConfig: true,
+        default: "segments"
+    },
+    {
+        id: "Fmp4UnsupportedCodecPolicy",
+        name: "fMP4 不支持编码处理策略",
+        type: "Fmp4UnsupportedCodecPolicy",
+        configType: "room",
+        advancedConfig: true,
+        default: "Fmp4UnsupportedCodecPolicy.FailSession"
+    },
+    {
         id: "CuttingMode",
         name: "自动分段模式",
         type: "CuttingMode",

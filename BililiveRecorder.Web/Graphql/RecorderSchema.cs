@@ -1,5 +1,7 @@
 using System;
 using BililiveRecorder.Core;
+using BililiveRecorder.Core.Artifacts;
+using Microsoft.Extensions.DependencyInjection;
 using GraphQL.Types;
 
 namespace BililiveRecorder.Web.Graphql
@@ -8,7 +10,7 @@ namespace BililiveRecorder.Web.Graphql
     {
         public RecorderSchema(IServiceProvider services, IRecorder recorder) : base(services)
         {
-            this.Query = new RecorderQuery(recorder);
+            this.Query = new RecorderQuery(recorder, services.GetRequiredService<IRecordResourceQueryService>());
             this.Mutation = new RecorderMutation(recorder);
             //this.Subscription = new RecorderSubscription();
         }

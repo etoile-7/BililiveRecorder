@@ -11,6 +11,7 @@ namespace BililiveRecorder.Core.Recording
         private readonly IServiceProvider serviceProvider;
         private readonly ObjectFactory factoryRawData;
         private readonly ObjectFactory factoryStandard;
+        private readonly ObjectFactory factoryFmp4;
 
         public RecordTaskFactory(ILogger logger, IServiceProvider serviceProvider)
         {
@@ -19,6 +20,7 @@ namespace BililiveRecorder.Core.Recording
 
             this.factoryRawData = ActivatorUtilities.CreateFactory(typeof(RawDataRecordTask), new[] { typeof(IRoom) });
             this.factoryStandard = ActivatorUtilities.CreateFactory(typeof(StandardRecordTask), new[] { typeof(IRoom) });
+            this.factoryFmp4 = ActivatorUtilities.CreateFactory(typeof(Fmp4RecordTask), new[] { typeof(IRoom) });
         }
 
         public IRecordTask CreateRecordTask(IRoom room, RecordMode? recordModeOverride = null)
@@ -32,6 +34,7 @@ namespace BililiveRecorder.Core.Recording
             return recordMode switch
             {
                 RecordMode.RawData => (IRecordTask)this.factoryRawData(this.serviceProvider, new[] { room }),
+                RecordMode.Fmp4 => (IRecordTask)this.factoryFmp4(this.serviceProvider, new[] { room }),
                 _ => (IRecordTask)this.factoryStandard(this.serviceProvider, new[] { room })
             };
         }

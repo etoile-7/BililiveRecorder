@@ -2,6 +2,7 @@ using BililiveRecorder.Core;
 using BililiveRecorder.Core.Api;
 using BililiveRecorder.Core.Api.Danmaku;
 using BililiveRecorder.Core.Api.Http;
+using BililiveRecorder.Core.Artifacts;
 using BililiveRecorder.Core.Config.V3;
 using BililiveRecorder.Core.Danmaku;
 using BililiveRecorder.Core.Recording;
@@ -49,6 +50,7 @@ namespace BililiveRecorder.DependencyInjection
             .AddScoped<IFlvProcessingContextWriterFactory, FlvProcessingContextWriterWithFileWriterFactory>()
             .AddScoped<IFlvTagReaderFactory, FlvTagReaderFactory>()
             .AddScoped<ITagGroupReaderFactory, TagGroupReaderFactory>()
+            .AddSingleton<IRecordResourceQueryService, RecordResourceQueryService>()
             ;
     }
 }

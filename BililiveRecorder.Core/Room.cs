@@ -509,7 +509,12 @@ namespace BililiveRecorder.Core
         private void RecordTask_RecordFileOpening(object? sender, RecordFileOpeningEventArgs e)
         {
             if (this.RoomConfig.RecordDanmaku)
-                this.basicDanmakuWriter.EnableWithPath(Path.ChangeExtension(e.FullPath, "xml"), this);
+            {
+                if (this.RoomConfig.RecordMode == RecordMode.Fmp4)
+                    this.basicDanmakuWriter.EnableJsonLinesWithPath(Path.Combine(Path.GetDirectoryName(e.FullPath)!, "danmaku.jsonl"), this, e.SessionId);
+                else
+                    this.basicDanmakuWriter.EnableWithPath(Path.ChangeExtension(e.FullPath, "xml"), this);
+            }
             else
                 this.basicDanmakuWriter.Disable();
 

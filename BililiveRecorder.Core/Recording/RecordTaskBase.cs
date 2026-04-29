@@ -42,6 +42,7 @@ namespace BililiveRecorder.Core.Recording
 
         protected string? streamHost;
         protected string? streamHostFull;
+        protected StreamCodecQn selectedCodecQn;
         protected bool started = false;
         protected bool timeoutTriggered = false;
         protected int qn;
@@ -100,6 +101,7 @@ namespace BililiveRecorder.Core.Recording
 
             var (fullUrl, codecQn) = await this.FetchStreamUrlAsync(this.room.RoomConfig.RoomId).ConfigureAwait(false);
 
+            this.selectedCodecQn = codecQn;
             this.qn = codecQn.Qn;
             this.streamHost = new Uri(fullUrl).Host;
             var qnDesc = StreamQualityNumber.MapToString(codecQn.Qn);
@@ -191,7 +193,7 @@ namespace BililiveRecorder.Core.Recording
             }
         }
 
-        protected (string fullPath, string relativePath) CreateFileName()
+        protected (string fullPath, string relativePath) CreateFileName(string requiredExtension = ".flv", bool appendRequiredExtension = true)
         {
             this.partIndex++;
 
@@ -207,7 +209,7 @@ namespace BililiveRecorder.Core.Recording
                 PartIndex = this.partIndex,
                 Qn = this.qn,
                 Json = this.room.RawBilibiliApiJsonData,
-            });
+            }, requiredExtension, appendRequiredExtension);
 
             return (output.FullPath!, output.RelativePath);
         }

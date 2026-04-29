@@ -8,6 +8,7 @@ namespace BililiveRecorder.Core.Danmaku
     {
         void Disable();
         void EnableWithPath(string path, IRoom room);
+        void EnableJsonLinesWithPath(string path, IRoom room, Guid sessionId);
         Task WriteAsync(DanmakuModel danmakuModel);
     }
 }

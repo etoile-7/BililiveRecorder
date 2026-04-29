@@ -38,6 +38,54 @@ namespace BililiveRecorder.Core.Config.V3
         public Optional<RecordMode> OptionalRecordMode { get => this.GetPropertyValueOptional<RecordMode>(nameof(this.RecordMode)); set => this.SetPropertyValueOptional(value, nameof(this.RecordMode)); }
 
         /// <summary>
+        /// FFmpeg 可执行文件路径
+        /// </summary>
+        public string? FfmpegExecutablePath { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFfmpegExecutablePath { get => this.GetPropertyHasValue(nameof(this.FfmpegExecutablePath)); set => this.SetPropertyHasValue<string>(value, nameof(this.FfmpegExecutablePath)); }
+        [JsonProperty(nameof(FfmpegExecutablePath)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFfmpegExecutablePath { get => this.GetPropertyValueOptional<string>(nameof(this.FfmpegExecutablePath)); set => this.SetPropertyValueOptional(value, nameof(this.FfmpegExecutablePath)); }
+
+        /// <summary>
+        /// FFmpeg 额外参数
+        /// </summary>
+        public string? FfmpegExtraArgs { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFfmpegExtraArgs { get => this.GetPropertyHasValue(nameof(this.FfmpegExtraArgs)); set => this.SetPropertyHasValue<string>(value, nameof(this.FfmpegExtraArgs)); }
+        [JsonProperty(nameof(FfmpegExtraArgs)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFfmpegExtraArgs { get => this.GetPropertyValueOptional<string>(nameof(this.FfmpegExtraArgs)); set => this.SetPropertyValueOptional(value, nameof(this.FfmpegExtraArgs)); }
+
+        /// <summary>
+        /// fMP4 分片时长秒数
+        /// </summary>
+        public uint Fmp4SegmentDurationSeconds { get => this.GetPropertyValue<uint>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4SegmentDurationSeconds { get => this.GetPropertyHasValue(nameof(this.Fmp4SegmentDurationSeconds)); set => this.SetPropertyHasValue<uint>(value, nameof(this.Fmp4SegmentDurationSeconds)); }
+        [JsonProperty(nameof(Fmp4SegmentDurationSeconds)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<uint> OptionalFmp4SegmentDurationSeconds { get => this.GetPropertyValueOptional<uint>(nameof(this.Fmp4SegmentDurationSeconds)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4SegmentDurationSeconds)); }
+
+        /// <summary>
+        /// fMP4 初始化文件名
+        /// </summary>
+        public string? Fmp4InitFileName { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4InitFileName { get => this.GetPropertyHasValue(nameof(this.Fmp4InitFileName)); set => this.SetPropertyHasValue<string>(value, nameof(this.Fmp4InitFileName)); }
+        [JsonProperty(nameof(Fmp4InitFileName)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFmp4InitFileName { get => this.GetPropertyValueOptional<string>(nameof(this.Fmp4InitFileName)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4InitFileName)); }
+
+        /// <summary>
+        /// fMP4 分片目录名
+        /// </summary>
+        public string? Fmp4SegmentsDirectoryName { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4SegmentsDirectoryName { get => this.GetPropertyHasValue(nameof(this.Fmp4SegmentsDirectoryName)); set => this.SetPropertyHasValue<string>(value, nameof(this.Fmp4SegmentsDirectoryName)); }
+        [JsonProperty(nameof(Fmp4SegmentsDirectoryName)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFmp4SegmentsDirectoryName { get => this.GetPropertyValueOptional<string>(nameof(this.Fmp4SegmentsDirectoryName)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4SegmentsDirectoryName)); }
+
+        /// <summary>
+        /// fMP4 不支持编码处理策略
+        /// </summary>
+        public Fmp4UnsupportedCodecPolicy Fmp4UnsupportedCodecPolicy { get => this.GetPropertyValue<Fmp4UnsupportedCodecPolicy>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4UnsupportedCodecPolicy { get => this.GetPropertyHasValue(nameof(this.Fmp4UnsupportedCodecPolicy)); set => this.SetPropertyHasValue<Fmp4UnsupportedCodecPolicy>(value, nameof(this.Fmp4UnsupportedCodecPolicy)); }
+        [JsonProperty(nameof(Fmp4UnsupportedCodecPolicy)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<Fmp4UnsupportedCodecPolicy> OptionalFmp4UnsupportedCodecPolicy { get => this.GetPropertyValueOptional<Fmp4UnsupportedCodecPolicy>(nameof(this.Fmp4UnsupportedCodecPolicy)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4UnsupportedCodecPolicy)); }
+
+        /// <summary>
         /// 自动分段模式
         /// </summary>
         public CuttingMode CuttingMode { get => this.GetPropertyValue<CuttingMode>(); set => this.SetPropertyValue(value); }
@@ -258,6 +306,54 @@ namespace BililiveRecorder.Core.Config.V3
         public bool HasRecordMode { get => this.GetPropertyHasValue(nameof(this.RecordMode)); set => this.SetPropertyHasValue<RecordMode>(value, nameof(this.RecordMode)); }
         [JsonProperty(nameof(RecordMode)), EditorBrowsable(EditorBrowsableState.Never)]
         public Optional<RecordMode> OptionalRecordMode { get => this.GetPropertyValueOptional<RecordMode>(nameof(this.RecordMode)); set => this.SetPropertyValueOptional(value, nameof(this.RecordMode)); }
+
+        /// <summary>
+        /// FFmpeg 可执行文件路径
+        /// </summary>
+        public string? FfmpegExecutablePath { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFfmpegExecutablePath { get => this.GetPropertyHasValue(nameof(this.FfmpegExecutablePath)); set => this.SetPropertyHasValue<string>(value, nameof(this.FfmpegExecutablePath)); }
+        [JsonProperty(nameof(FfmpegExecutablePath)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFfmpegExecutablePath { get => this.GetPropertyValueOptional<string>(nameof(this.FfmpegExecutablePath)); set => this.SetPropertyValueOptional(value, nameof(this.FfmpegExecutablePath)); }
+
+        /// <summary>
+        /// FFmpeg 额外参数
+        /// </summary>
+        public string? FfmpegExtraArgs { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFfmpegExtraArgs { get => this.GetPropertyHasValue(nameof(this.FfmpegExtraArgs)); set => this.SetPropertyHasValue<string>(value, nameof(this.FfmpegExtraArgs)); }
+        [JsonProperty(nameof(FfmpegExtraArgs)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFfmpegExtraArgs { get => this.GetPropertyValueOptional<string>(nameof(this.FfmpegExtraArgs)); set => this.SetPropertyValueOptional(value, nameof(this.FfmpegExtraArgs)); }
+
+        /// <summary>
+        /// fMP4 分片时长秒数
+        /// </summary>
+        public uint Fmp4SegmentDurationSeconds { get => this.GetPropertyValue<uint>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4SegmentDurationSeconds { get => this.GetPropertyHasValue(nameof(this.Fmp4SegmentDurationSeconds)); set => this.SetPropertyHasValue<uint>(value, nameof(this.Fmp4SegmentDurationSeconds)); }
+        [JsonProperty(nameof(Fmp4SegmentDurationSeconds)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<uint> OptionalFmp4SegmentDurationSeconds { get => this.GetPropertyValueOptional<uint>(nameof(this.Fmp4SegmentDurationSeconds)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4SegmentDurationSeconds)); }
+
+        /// <summary>
+        /// fMP4 初始化文件名
+        /// </summary>
+        public string? Fmp4InitFileName { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4InitFileName { get => this.GetPropertyHasValue(nameof(this.Fmp4InitFileName)); set => this.SetPropertyHasValue<string>(value, nameof(this.Fmp4InitFileName)); }
+        [JsonProperty(nameof(Fmp4InitFileName)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFmp4InitFileName { get => this.GetPropertyValueOptional<string>(nameof(this.Fmp4InitFileName)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4InitFileName)); }
+
+        /// <summary>
+        /// fMP4 分片目录名
+        /// </summary>
+        public string? Fmp4SegmentsDirectoryName { get => this.GetPropertyValue<string>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4SegmentsDirectoryName { get => this.GetPropertyHasValue(nameof(this.Fmp4SegmentsDirectoryName)); set => this.SetPropertyHasValue<string>(value, nameof(this.Fmp4SegmentsDirectoryName)); }
+        [JsonProperty(nameof(Fmp4SegmentsDirectoryName)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<string?> OptionalFmp4SegmentsDirectoryName { get => this.GetPropertyValueOptional<string>(nameof(this.Fmp4SegmentsDirectoryName)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4SegmentsDirectoryName)); }
+
+        /// <summary>
+        /// fMP4 不支持编码处理策略
+        /// </summary>
+        public Fmp4UnsupportedCodecPolicy Fmp4UnsupportedCodecPolicy { get => this.GetPropertyValue<Fmp4UnsupportedCodecPolicy>(); set => this.SetPropertyValue(value); }
+        public bool HasFmp4UnsupportedCodecPolicy { get => this.GetPropertyHasValue(nameof(this.Fmp4UnsupportedCodecPolicy)); set => this.SetPropertyHasValue<Fmp4UnsupportedCodecPolicy>(value, nameof(this.Fmp4UnsupportedCodecPolicy)); }
+        [JsonProperty(nameof(Fmp4UnsupportedCodecPolicy)), EditorBrowsable(EditorBrowsableState.Never)]
+        public Optional<Fmp4UnsupportedCodecPolicy> OptionalFmp4UnsupportedCodecPolicy { get => this.GetPropertyValueOptional<Fmp4UnsupportedCodecPolicy>(nameof(this.Fmp4UnsupportedCodecPolicy)); set => this.SetPropertyValueOptional(value, nameof(this.Fmp4UnsupportedCodecPolicy)); }
 
         /// <summary>
         /// 自动分段模式
@@ -539,6 +635,18 @@ namespace BililiveRecorder.Core.Config.V3
         private DefaultConfig() { }
 
         public RecordMode RecordMode => RecordMode.Standard;
+
+        public string FfmpegExecutablePath => @"ffmpeg";
+
+        public string FfmpegExtraArgs => @"";
+
+        public uint Fmp4SegmentDurationSeconds => 6;
+
+        public string Fmp4InitFileName => @"init.mp4";
+
+        public string Fmp4SegmentsDirectoryName => @"segments";
+
+        public Fmp4UnsupportedCodecPolicy Fmp4UnsupportedCodecPolicy => Fmp4UnsupportedCodecPolicy.FailSession;
 
         public CuttingMode CuttingMode => CuttingMode.Disabled;
 
